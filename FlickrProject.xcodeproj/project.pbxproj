@@ -17,9 +17,12 @@
 		2043E6141D874B55003CCA56 /* MovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2043E6131D874B55003CCA56 /* MovieViewController.m */; };
 		2043E61A1D874EEE003CCA56 /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2043E6191D874EEE003CCA56 /* MovieCell.m */; };
 		2043E6431D889303003CCA56 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2043E6421D889303003CCA56 /* VideoViewController.m */; };
+		2043E6691D89F661003CCA56 /* MovieImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2043E6681D89F661003CCA56 /* MovieImageView.m */; };
+		719993153A8C7B0118FEF536 /* libPods-FlickrProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88F7761391B4375A59FE15F6 /* libPods-FlickrProject.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05D4EF44119EE63A0691D899 /* Pods-FlickrProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickrProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlickrProject/Pods-FlickrProject.release.xcconfig"; sourceTree = "<group>"; };
 		2043E5EE1D874366003CCA56 /* FlickrProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2043E5F21D874366003CCA56 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2043E5F41D874366003CCA56 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -38,6 +41,10 @@
 		2043E6191D874EEE003CCA56 /* MovieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieCell.m; sourceTree = "<group>"; };
 		2043E6411D889303003CCA56 /* VideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
 		2043E6421D889303003CCA56 /* VideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
+		2043E6671D89F661003CCA56 /* MovieImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieImageView.h; sourceTree = "<group>"; };
+		2043E6681D89F661003CCA56 /* MovieImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieImageView.m; sourceTree = "<group>"; };
+		88F7761391B4375A59FE15F6 /* libPods-FlickrProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FlickrProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6E5E14464B32755109A2514 /* Pods-FlickrProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickrProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlickrProject/Pods-FlickrProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,17 +52,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				719993153A8C7B0118FEF536 /* libPods-FlickrProject.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		202302F1DE14817BE3A83A61 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				88F7761391B4375A59FE15F6 /* libPods-FlickrProject.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2043E5E51D874366003CCA56 = {
 			isa = PBXGroup;
 			children = (
 				2043E5F01D874366003CCA56 /* FlickrProject */,
 				2043E5EF1D874366003CCA56 /* Products */,
+				5EE08405678109971A0FA5A0 /* Pods */,
+				202302F1DE14817BE3A83A61 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,8 +121,19 @@
 				2043E6191D874EEE003CCA56 /* MovieCell.m */,
 				2043E6411D889303003CCA56 /* VideoViewController.h */,
 				2043E6421D889303003CCA56 /* VideoViewController.m */,
+				2043E6671D89F661003CCA56 /* MovieImageView.h */,
+				2043E6681D89F661003CCA56 /* MovieImageView.m */,
 			);
 			name = views;
+			sourceTree = "<group>";
+		};
+		5EE08405678109971A0FA5A0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F6E5E14464B32755109A2514 /* Pods-FlickrProject.debug.xcconfig */,
+				05D4EF44119EE63A0691D899 /* Pods-FlickrProject.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -114,9 +143,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2043E6051D874366003CCA56 /* Build configuration list for PBXNativeTarget "FlickrProject" */;
 			buildPhases = (
+				511599FFBE096254A74943D6 /* [CP] Check Pods Manifest.lock */,
 				2043E5EA1D874366003CCA56 /* Sources */,
 				2043E5EB1D874366003CCA56 /* Frameworks */,
 				2043E5EC1D874366003CCA56 /* Resources */,
+				7F8A1E4DBB00A1A4358EC09A /* [CP] Embed Pods Frameworks */,
+				1B62D27E638E17E9E3138FE1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -172,12 +204,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1B62D27E638E17E9E3138FE1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlickrProject/Pods-FlickrProject-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		511599FFBE096254A74943D6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7F8A1E4DBB00A1A4358EC09A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlickrProject/Pods-FlickrProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2043E5EA1D874366003CCA56 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				2043E5F91D874366003CCA56 /* ViewController.m in Sources */,
+				2043E6691D89F661003CCA56 /* MovieImageView.m in Sources */,
 				2043E5F61D874366003CCA56 /* AppDelegate.m in Sources */,
 				2043E60E1D874655003CCA56 /* MovieDetailViewController.m in Sources */,
 				2043E61A1D874EEE003CCA56 /* MovieCell.m in Sources */,
@@ -293,6 +374,7 @@
 		};
 		2043E6061D874366003CCA56 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6E5E14464B32755109A2514 /* Pods-FlickrProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FlickrProject/Info.plist;
@@ -304,6 +386,7 @@
 		};
 		2043E6071D874366003CCA56 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05D4EF44119EE63A0691D899 /* Pods-FlickrProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FlickrProject/Info.plist;
@@ -332,6 +415,7 @@
 				2043E6071D874366003CCA56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -85,9 +85,7 @@
     cell.titleLabel.text = movie[@"title"];
     cell.synopsisLabel.text = movie[@"overview"];
     
-    NSData * imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: [NSString stringWithFormat:@"https://image.tmdb.org/t/p/w342/%@", movie[@"poster_path"]]]];
-
-    cell.movieImage.image = [UIImage imageWithData: imageData];
+    [cell.movieImage setImageWithURL:[NSURL URLWithString: [NSString stringWithFormat:@"https://image.tmdb.org/t/p/w342/%@", movie[@"poster_path"]]]];
     return cell;
 }
 
