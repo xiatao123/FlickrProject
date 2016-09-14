@@ -30,6 +30,16 @@
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     tabBarController.viewControllers = @[topRatedNavigationController, nowPlayingNavigationController];
     
+    NSArray *tabs =  tabBarController.viewControllers;
+    
+    UIViewController *tab1 = [tabs objectAtIndex:0];
+    tab1.tabBarItem.image = [UIImage imageNamed:@"video"];
+    tab1.tabBarItem.title = @"Now Playing";
+
+    UIViewController *tab2 = [tabs objectAtIndex:1];
+    tab2.tabBarItem.image = [UIImage imageNamed:@"star"];
+    tab2.tabBarItem.title = @"Top Rated";
+    
     self.window.rootViewController = tabBarController;
 
     return YES;
