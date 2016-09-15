@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MovieImageView.h"
 
 @interface MovieDetailViewController : UIViewController
 
 @property (nonatomic, strong) NSDictionary *movie;
+@property (weak, nonatomic) IBOutlet MovieImageView *moiveImage;
+@property (weak, nonatomic) IBOutlet UIScrollView *movieScroll;
 
 @end

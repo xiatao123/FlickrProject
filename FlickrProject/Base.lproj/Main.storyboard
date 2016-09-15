@@ -105,9 +105,23 @@
                     <view key="view" contentMode="scaleToFill" id="USb-VZ-8XG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="xgb-6L-I1n" customClass="MovieImageView">
+                                <rect key="frame" x="0.0" y="61" width="320" height="468"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="GfK-Hn-iRt">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Yl1-x1-gF8"/>
+                    <connections>
+                        <outlet property="moiveImage" destination="xgb-6L-I1n" id="05c-da-P0T"/>
+                        <outlet property="movieScroll" destination="GfK-Hn-iRt" id="aq3-po-7zb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M8R-Wj-uNS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

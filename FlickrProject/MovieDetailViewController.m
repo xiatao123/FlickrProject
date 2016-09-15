@@ -17,7 +17,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSLog(self.movie[@"title"]);
+    [self.moiveImage setImageWithURL:[NSURL URLWithString: [NSString stringWithFormat:@"https://image.tmdb.org/t/p/w342/%@", self.movie[@"poster_path"]]]];
+    CGFloat contentWidth = self.movieScroll.bounds.size.width;
+    CGFloat contentHeight = self.movieScroll.bounds.size.height*3;
+    self.movieScroll.contentSize = CGSizeMake(contentWidth, contentHeight);
+    
+    CGFloat subviewHeight = 120;
+    CGFloat currentViewOffset = 0;
+    while (currentViewOffset<contentHeight){
+        
+        
+        
+        CGRect frame = CGRectMake(0, currentViewOffset, contentWidth, subviewHeight);
+
+        CGFloat hue = currentViewOffset/contentHeight;
+        UIView *subview = [[UIView alloc] initWithFrame:frame];
+        subview.backgroundColor = [[UIColor alloc] initWithHue:hue saturation:1 brightness:1 alpha:1];
+        [self.movieScroll addSubview:subview];
+        
+        currentViewOffset += subviewHeight;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
