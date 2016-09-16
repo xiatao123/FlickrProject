@@ -6,6 +6,7 @@ target 'FlickrProject' do
   # use_frameworks!
 
   # Pods for FlickrProject
+pod 'youtube-ios-player-helper', '~> 0.1'
 pod 'AFNetworking', '~> 2.6'
 pod 'MBProgressHUD'
 

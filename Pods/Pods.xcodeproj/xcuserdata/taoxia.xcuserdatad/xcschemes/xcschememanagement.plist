@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>youtube-ios-player-helper.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -27,7 +32,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A3D72DBBBFC81C5E0B9A14B84923EBDC</key>
+		<key>A44E0677F0577120A89DE70DCDDCDDD2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C340B12F85678EFCB100220831A735C9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

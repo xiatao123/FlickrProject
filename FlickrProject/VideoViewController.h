@@ -7,7 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "YTPlayerView.h"
 
 @interface VideoViewController : ViewController
+
+@property (nonatomic, strong) NSDictionary *movie;
+@property (nonatomic, weak) IBOutlet YTPlayerView *playerView;
 
 @end
