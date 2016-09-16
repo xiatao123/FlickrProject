@@ -9,6 +9,11 @@
 #import "MovieDetailViewController.h"
 
 @interface MovieDetailViewController ()
+@property (weak, nonatomic) IBOutlet UIView *detailView;
+@property (weak, nonatomic) IBOutlet UILabel *movieTitle;
+@property (weak, nonatomic) IBOutlet UILabel *movieLikes;
+@property (weak, nonatomic) IBOutlet UILabel *movieOverview;
+@property (weak, nonatomic) IBOutlet UILabel *movieDate;
 
 @end
 
@@ -18,25 +23,26 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self.moiveImage setImageWithURL:[NSURL URLWithString: [NSString stringWithFormat:@"https://image.tmdb.org/t/p/w342/%@", self.movie[@"poster_path"]]]];
+    self.movieTitle.text = self.movie[@"title"];
+    self.movieDate.text = self.movie[@"release_date"];
+    self.movieLikes.text = [NSString stringWithFormat:@"%@%%", self.movie[@"popularity"]];
+    self.movieOverview.text = self.movie[@"overview"];
+    self.movieOverview.numberOfLines = 0;
+    [self.movieOverview sizeToFit];
+    CGRect newFrame = self.movieOverview.frame;
+    CGFloat newHeight = newFrame.size.height;  //to get the width of the label
+    
     CGFloat contentWidth = self.movieScroll.bounds.size.width;
-    CGFloat contentHeight = self.movieScroll.bounds.size.height*3;
+    CGFloat contentHeight = self.movieScroll.bounds.size.height+newHeight;
     self.movieScroll.contentSize = CGSizeMake(contentWidth, contentHeight);
     
-    CGFloat subviewHeight = 120;
-    CGFloat currentViewOffset = 0;
-    while (currentViewOffset<contentHeight){
-        
-        
-        
-        CGRect frame = CGRectMake(0, currentViewOffset, contentWidth, subviewHeight);
+    CGFloat subviewHeight = 100+newHeight;
+    CGFloat currentViewOffset = 420;
+    
+    CGRect frame = CGRectMake(0, currentViewOffset, contentWidth, subviewHeight);
 
-        CGFloat hue = currentViewOffset/contentHeight;
-        UIView *subview = [[UIView alloc] initWithFrame:frame];
-        subview.backgroundColor = [[UIColor alloc] initWithHue:hue saturation:1 brightness:1 alpha:1];
-        [self.movieScroll addSubview:subview];
-        
-        currentViewOffset += subviewHeight;
-    }
+    self.detailView.frame = frame;
+    [self.movieScroll addSubview:self.detailView];
 }
 
 - (void)didReceiveMemoryWarning {

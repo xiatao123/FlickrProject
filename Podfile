@@ -7,5 +7,6 @@ target 'FlickrProject' do
 
   # Pods for FlickrProject
 pod 'AFNetworking', '~> 2.6'
+pod 'MBProgressHUD'
 
 end

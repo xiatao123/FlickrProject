@@ -9,10 +9,13 @@
 #import "MovieViewController.h"
 #import "MovieCell.h"
 #import "MovieDetailViewController.h"
+#import "MBProgressHUD.h"
 
 @interface MovieViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) NSArray *movies;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIView *warningView;
+@property (weak, nonatomic) IBOutlet UILabel *warningLabel;
 @end
 
 @implementation MovieViewController
@@ -40,6 +43,9 @@
                                   delegate:nil
                              delegateQueue:[NSOperationQueue mainQueue]];
     
+    self.warningView.hidden = true;
+    [MBProgressHUD showHUDAddedTo:self.view animated:true];
+    
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request
                                             completionHandler:^(NSData * _Nullable data,
                                                                 NSURLResponse * _Nullable response,
@@ -51,9 +57,13 @@
                                                                                     options:kNilOptions
                                                                                       error:&jsonError];
                                                     NSLog(@"Response: %@", responseDictionary);
+                                                    [MBProgressHUD hideHUDForView:self.view animated:true];
                                                     self.movies = responseDictionary[@"results"];
                                                     [self.tableView reloadData];
                                                 } else {
+                                                    self.warningLabel.text = [NSString stringWithFormat:@"Network Error: %@", error.description];
+                                                    self.warningView.hidden = false;
+
                                                     NSLog(@"An error occurred: %@", error.description);
                                                 }
                                             }];
